@@ -4,7 +4,7 @@
 	"name": "Colored Box",
 	"description": "A colored box",
 	"newInstancePrefix": "ColoredBox",
-	"icon": "https://raw.githubusercontent.com/AlfredWangTJ/coloredbox-test/main/icon.png",
+	"icon": "https://github.com/AlfredWangTJ/coloredbox-test/blob/main/icon.png",
 	"vendor": "SAP",
 	"eula": "",
 	"license": "",
@@ -12,21 +12,21 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-sample-coloredbox",
-			"url": "https://raw.githubusercontent.com/AlfredWangTJ/coloredbox-test/main/coloredbox.js",
+			"url": "https://github.com/AlfredWangTJ/coloredbox-test/blob/main/coloredbox.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
 			"tag": "com-sap-sample-coloredbox-styling",
-			"url": "https://raw.githubusercontent.com/AlfredWangTJ/coloredbox-test/main/coloredbox_styling.js",
+			"url": "https://github.com/AlfredWangTJ/coloredbox-test/blob/main/coloredbox_styling.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
 			"tag": "com-sap-sample-coloredbox-builder",
-			"url": "https://raw.githubusercontent.com/AlfredWangTJ/coloredbox-test/main/coloredbox_builder.js",
+			"url": "https://github.com/AlfredWangTJ/coloredbox-test/blob/main/coloredbox_builder.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
