@@ -75,23 +75,23 @@
       console.log("coloredbox.js - getColor");
       return this.color; //this.color隐式调用getter方法get color()
     }
-    set color(newColor) {
-      //ColoredBox的color属性的setter方法，供隐式调用
-      console.log("coloredbox.js - setter");
-      this._props["color"] = newColor;
-    }
-    get color() {
-      //ColoredBox的color属性的getter方法，供隐式调用
-      console.log("coloredbox.js - getter");
-      return this._props["color"];
-    }
+//     set color(newColor) {
+//       //ColoredBox的color属性的setter方法，供隐式调用
+//       console.log("coloredbox.js - setter");
+//       this._props["color"] = newColor;
+//     }
+//     get color() {
+//       //ColoredBox的color属性的getter方法，供隐式调用
+//       console.log("coloredbox.js - getter");
+//       return this._props["color"];
+//     }
 
     printVal() {
       //打印属性值
       console.log("coloredbox.js - printVal");
       console.log(this._props);
-      console.log('${this._props["color"]}'); //在控制台打印_props属性中的color子属性
-      console.log('${this._props["widgetName"]}'); //在控制台打印_props属性中的微件名称子属性
+      console.log(this._props["color"]); //在控制台打印_props属性中的color子属性
+      console.log(this._props["widgetName"]); //在控制台打印_props属性中的微件名称子属性
       console.log(this.color);
     }
   }
