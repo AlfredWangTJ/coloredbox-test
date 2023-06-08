@@ -1,79 +1,78 @@
 {
 	"id": "com.sap.sample.coloredbox",
 	"version": "1.0.0",
-	"name": "Colored Box",
-	"description": "A colored box",
-	"newInstancePrefix": "ColoredBox",
-	"icon": "https://alfredwangtj.github.io/coloredbox-test/icon.png",
-	"vendor": "SAP",
+	"name": "Colored Box",  //在Story菜单栏插入微件时显示的微件的名字
+	"description": "Description of colored box widget",
+	"newInstancePrefix": "ColoredBox",  //在Story页面中添加的微件时生成的名称，如：ColoredBox_1，ColoredBox_2
+	"icon": "https://alfredwangtj.github.io/coloredbox-test/icon.png",  //微件的图标，也可以使用base64编码图像
+	"vendor": "SAP",  //微件供应商
 	"eula": "",
 	"license": "",
 	"webcomponents": [
 		{
-			"kind": "main",
-			"tag": "com-sap-sample-coloredbox",
-			"url": "https://alfredwangtj.github.io/coloredbox-test/coloredbox.js",
-			"integrity": "",
-			"ignoreIntegrity": true
+			"kind": "main",  //必需，main类型代表Story页面中微件的本身
+			"tag": "com-sap-sample-coloredbox",  //创建微件时会将Shadow DOM挂在自定义HTML元素下，这个自定义元素是com-sap-sample-coloredbox
+			"url": "https://alfredwangtj.github.io/coloredbox-test/coloredbox.js",  //微件本身的js资源文件链接，需要存放在文件服务器上，且不支持身份验证，可以使用github page作为载体
+			"integrity": "",  //SHA256-hash值，用于js文件校验，当ignoreIntegrity = true时可以留空
+			"ignoreIntegrity": true  //是否跳过文件校验，开发阶段可以设置为true，此时不需要填写integrity值，正式环境需要设置为false
 		},
 		{
-			"kind": "styling",
-			"tag": "com-sap-sample-coloredbox-styling",
+			"kind": "styling",  //可选，styling类型代表Story页面右侧配置界面中的Styling配置面板
+			"tag": "com-sap-sample-coloredbox-styling",  //创建Styling面板时同样会使用自定义HTML元素，这个自定义元素是com-sap-sample-coloredbox-styling
 			"url": "https://alfredwangtj.github.io/coloredbox-test/coloredbox_styling.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
-			"kind": "builder",
+			"kind": "builder",  //可选，builder类型代表Story页面右侧配置界面中的Builder配置面板
 			"tag": "com-sap-sample-coloredbox-builder",
 			"url": "https://alfredwangtj.github.io/coloredbox-test/coloredbox_builder.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
 	],
-	"properties": {
-		"color": {
-			"type": "string",
-			"description": "Background color",
-			"default": "red"
+	"properties": {  //微件的属性
+		"color": {  //颜色
+			"type": "string",  //类型是String
+			"description": "Background color",  //该属性的描述
+			"default": "red"  //默认值
 		},
-		"opacity": {
+		"opacity": {  //不透明度
 			"type": "number",
 			"description": "Opacity",
 			"default": 1
 		},
-		"width": {
+		"width": {  //宽度，所有微件的默认属性，自定义setter函数不会生效
 			"type": "integer",
 			"default": 100
 		},
-		"height": {
+		"height": {  //高度，所有微件的默认属性，自定义setter函数不会生效
 			"type": "integer",
 			"default": 100
 		}
 	},
-	"methods": {
-		"setColor": {
-			"description": "Sets the background color.",
-			"parameters": [
+	"methods": {  //微件支持的方法，可以在App Designer/Story 2.0中通过代码“微件.方法”调用，如：ColoredBox_1.setColor("blue");
+		"setColor": {  //方法名称
+			"description": "Sets the background color.",  //方法描述
+			"parameters": [  //接收参数
 				{
-					"name": "newColor",
-					"type": "string",
-					"description": "The new background color"
+					"name": "newColor",  //参数名称
+					"type": "string",  //参数类型
+					"description": "The new background color"  //描述
 				}
 			],
-			"body": "this.color = newColor;"
+			"body": "this.color = newColor; console.log(\"coloredbox.json - setColor\");"  
+//可选，函数中的代码，如果在coloredbox.json中不添加methods的body，则需要在coloredbox.js中定义这一方法
 		},
-		"getColor": {
+		"getColor": {  //调用示例：var color = ColoredBox_2.getColor();
 			"returnType": "string",
 			"description": "Returns the background color.",
-			"body": "return this.color;"
+      //此处未添加body，在js文件中进行定义
 		}
 	},
-	"events": {
-		"onClick": {
-			"description": "Called when the user clicks the Colored Box."
+	"events": {  //微件支持的事件，在App Designer/Story 2.0的大纲中选择对应的微件，左侧fx图标（编辑脚本）显示的事件列表，类比：onClick，onResultChanged，onSelect，onInitialization等事件
+		"onClick": {  //事件名称
+			"description": "Called when the user clicks the Colored Box."  //事件描述
 		}
 	}
 }
-
- 
