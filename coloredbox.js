@@ -3,7 +3,7 @@
 	let template = document.createElement("template");  //微件本身的HTML模板
 	template.innerHTML = `
 		<style>
-		:host {  //host伪元素用来获取shadow DOM的Root根节点
+		:host {
 			border-radius: 25px;
 			border-width: 4px;
 			border-color: black;
