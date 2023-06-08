@@ -58,7 +58,7 @@
     onCustomWidgetDestroy(){}
 //该方法为SAC微件框架自带方法，与constructor相反，仅会触发一次，当微件从App Designer/Story 2.0画布移除时触发，或Application/Story 2.0被关闭时触发
 
-    onCustomWidgetResize(width, height){}
+//  onCustomWidgetResize(width, height){}
 //该方法为SAC微件框架自带方法，当微件处于激活状态且大小被调整时触发，当微件被隐藏时不会触发。使用该方法会导致SAC检测DOM的大小，会占用额外的性能，故当不需要该方法时，需要将其注释掉
 
     getColor(){  
