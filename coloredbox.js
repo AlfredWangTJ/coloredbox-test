@@ -17,6 +17,7 @@
 		constructor() {  
 //构造器，仅会触发一次，当微件被添加到App Designer/Story 2.0时触发
 			super();  //必须调用
+      console.log("coloredbox.js - constructor");
 			let shadowRoot = this.attachShadow({mode: "open"});  //创建shadow DOM的Root根节点
 			shadowRoot.appendChild(template.content.cloneNode(true));  //将HTML模板中的内容拷贝并添加到shadow DOM根节点下
 			this.addEventListener("click", event => {  
@@ -27,11 +28,15 @@
 			this._props = {};  //创建一个_props对象用于保存微件属性
 		}
 
-    connectedCallback(){}
+    connectedCallback(){
 //该方法为SAC微件框架自带方法，当微件被添加到HTML DOM时触发，或微件所在的页面/面板由隐藏状态调整为激活状态时也会触发，该方法每次都会触发。
+      console.log("coloredbox.js - connectedCallback");
+}
 
-    disconnectedCallback(){}
+    disconnectedCallback(){
 //该方法为SAC微件框架自带方法，与connectedCallback相反，当微件从HTML DOM中移除时触发，或微件所在的页面/面板被隐藏/关闭时也会触发，该方法每次都会触发。
+      console.log("coloredbox.js - disconnectedCallback");
+}
 
 		onCustomWidgetBeforeUpdate(oChangedProperties) {  
 //该方法为SAC微件框架自带方法，在监听到自定义事件propertiesChanged后触发，当微件属性变更之前执行，多用于更新微件的属性
@@ -55,11 +60,15 @@
 		}
 	}
 
-    onCustomWidgetDestroy(){}
+    onCustomWidgetDestroy(){
 //该方法为SAC微件框架自带方法，与constructor相反，仅会触发一次，当微件从App Designer/Story 2.0画布移除时触发，或Application/Story 2.0被关闭时触发
+      console.log("coloredbox.js - onCustomWidgetDestroy");
+}
 
-//  onCustomWidgetResize(width, height){}
+//  onCustomWidgetResize(width, height){
 //该方法为SAC微件框架自带方法，当微件处于激活状态且大小被调整时触发，当微件被隐藏时不会触发。使用该方法会导致SAC检测DOM的大小，会占用额外的性能，故当不需要该方法时，需要将其注释掉
+//      console.log("coloredbox.js - onCustomWidgetResize");
+//}
 
     getColor(){  
 //在coloredbox.json中methods["getColor"]未定义body，需要在coloredbox.js中对其进行补充，定义其函数体代码
